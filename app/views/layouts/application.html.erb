@@ -5,14 +5,25 @@
   <body>
     <%= site_bar -%>
     <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-    <div id="page_container">
-      <header>
+    <div id="page_container" class="container_12 clearfix">
+      <header class="grid_12">
         <%= render :partial => "/shared/header" -%>
       </header>
-      <section id='page'>
+      <nav class="grid_12 clearfix">
+        <ul>
+          <li>Home</li>
+          <li>Products</li>
+          <li>White Papers</li>
+          <li>Find an Agent</li>
+          <li>Request a Quote</li>
+        </ul>
+        <div class="search">
+        </div>
+      </nav>
+      <section id='page' class="grid_12">
         <%= yield %>
       </section>
-      <footer>
+      <footer class="grid_12">
         <%= render :partial => "/shared/footer" -%>
       </footer>
     </div>
