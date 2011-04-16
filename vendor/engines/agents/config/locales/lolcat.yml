@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    agents:
+      title: Agents
+  admin:
+    agents:
+      actions:
+        create_new: CREATE NEW Agent
+        reorder: REORDR Agents
+        reorder_done: DUN REORDERIN Agents
+      records:
+        title: Agents
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Agents YET. CLICK "CREATE NEW Agent" 2 ADD UR FURST agent.
+      agent:
+        view_live_html: VIEW DIS agent LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS agent
+        delete: REMOOV DIS agent FOREVR
+  agents:
+    show:
+      other: OTHR Agents

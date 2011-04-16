@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    agents:
+      title: Agents
+  admin:
+    agents:
+      actions:
+        create_new: Maak een nieuwe Agent
+        reorder: Wijzig de volgorde van de Agents
+        reorder_done: Klaar met het wijzingen van de volgorde van de Agents
+      records:
+        title: Agents
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Agents. Druk op 'Maak een nieuwe Agent' om de eerste aan te maken.
+      agent:
+        view_live_html: Bekijk deze agent op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze agent
+        delete: Verwijder deze agent voor eeuwig
+  agents:
+    show:
+      other: Andere Agents

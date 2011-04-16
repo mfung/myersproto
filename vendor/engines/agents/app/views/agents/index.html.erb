@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="agents">
+    <% @agents.each do |agent| %>
+      <li>
+        <%= link_to agent.name, agent_url(agent) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

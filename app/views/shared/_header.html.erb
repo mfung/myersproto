@@ -1,0 +1,35 @@
+<h1 id='logo'>
+  <%= link_to RefinerySetting.find_or_set(:site_name, "Company Name"), root_path %>
+</h1>
+<% 
+  # ::Fiber.new {
+  #   ::Fiber.yield(
+  #     render(:partial         => "/shared/menu", :locals => {
+  #              :dom_id        => 'menu',
+  #              :css           => 'menu',
+  #              :roots         => @menu_pages.where(:parent_id => nil),
+  #              :collection    => @menu_pages.where(@menu_pages.arel_table[:parent_id].not_eq(nil)),
+  #              :selected_item => (@page if defined?(::Page))
+  #            })
+  #   )
+  # }.resume 
+%>
+<div id="logo-menu">
+  <ul>
+    <li>Our Company</li>
+    <li>Contacts</li>
+    <li>Press</li>
+  </ul>
+</div>
+<div id="nav">
+  <ul>
+    <li>Home</li>
+    <li>Products</li>
+    <li>White Papers</li>
+    <li>Find an Agent</li>
+    <li>Request a Quote</li>
+  </ul>
+  <div class="search">
+  </div>
+</div>
+

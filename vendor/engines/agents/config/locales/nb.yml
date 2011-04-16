@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    agents:
+      title: Agents
+  admin:
+    agents:
+      actions:
+        create_new: Lag en ny Agent
+        reorder: Endre rekkefølgen på Agents
+        reorder_done: Ferdig å endre rekkefølgen Agents
+      records:
+        title: Agents
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Agents enda. Klikk på "Lag en ny Agent" for å legge til din første agent.
+      agent:
+        view_live_html: Vis hvordan denne agent ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne agent
+        delete: Fjern denne agent permanent
+  agents:
+    show:
+      other: Andre Agents

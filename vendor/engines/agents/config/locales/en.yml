@@ -1,0 +1,25 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    agents:
+      title: Agents
+  admin:
+    agents:
+      actions:
+        create_new: Add New Agent
+        reorder: Reorder Agents
+        reorder_done: Done Reordering Agents
+      records:
+        title: Agents
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Agents yet. Click "Add New Agent" to add your first agent.
+      agent:
+        view_live_html: View this agent live <br/><em>(opens in a new window)</em>
+        edit: Edit this agent
+        delete: Remove this agent forever
+  agents:
+    show:
+      other: Other Agents
