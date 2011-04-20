@@ -1,0 +1,27 @@
+<section id='body_content' class='grid_8'>
+  <h1><%=raw @page[:title] %></h1>
+  <% if @agents.count > 0 %>
+    <% @agents.each do |agent| %>
+      <div id="agent-info">
+        <table>
+          <thead><td colspan=4>Company</td></thead>
+          <tr><td colspan=4><%= agent.company %></td></tr>
+          <tr><td>Contact</td><td>Territory</td><td>Phone</td><td>Fax</td></tr>
+          <tr><td><%= agent.name %></td><td><%= agent.territory %></td><td><%= agent.phone%></td><td><%= agent.fax %></td></tr>
+          <tr><td colspan=4>Email</td></tr>
+          <tr><td colspan=4><%= agent.email %></td></tr>
+          <tr><td colspan=4>Url</td></tr>
+          <tr><td colspan=4><%= agent.url %></td></tr>
+          <tr><td colspan=4>Brands</td></tr>
+          <tr><td colspan=4><%= agent.brands.sort_by(&:name).collect{|brand| brand.name}.join(" | ") %></td></tr>
+        </table>
+      </div>
+    <% end %>
+  <% else %>
+    No agents were found, please try again.<br/><br/>
+    <%= render :partial => "shared/search" %>
+  <% end %>
+</section>
+<section id='side_body_content' class='grid_4'>
+  <%=raw @page[:side_body] %>
+</section>

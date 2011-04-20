@@ -6,20 +6,20 @@ module Admin
     
     def remove_brand
       flash[:notice] = 'Brand Removed.'
-      a = Agent.find(params[:agent_id])
-      b = Brand.find(params[:brand_id])
-      a.brands.delete b
+      agent = Agent.find(params[:agent_id])
+      brand = Brand.find(params[:brand_id])
+      agent.brands.delete brand
       
-      redirect_to :action => 'edit', :id => a.id
+      redirect_to :action => 'edit', :id => agent.id
     end
     
     def add_brand
       flash[:notice] = 'Brand Added.'
-      a = Agent.find(params[:agent_id])
-      b = Brand.find(params[:brand_id])
-      a.brands << b
+      agent = Agent.find(params[:agent_id])
+      brand = Brand.find(params[:brand_id])
+      agent.brands << brand
       
-      redirect_to :action => 'edit', :id => a.id
+      redirect_to :action => 'edit', :id => agent.id
     end
 
   end

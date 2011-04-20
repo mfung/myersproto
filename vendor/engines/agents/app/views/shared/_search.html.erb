@@ -1,0 +1,5 @@
+<%= form_tag('/agents/results', :method => 'post') do %>
+  <%= select_tag('brand_id', options_from_collection_for_select(@brands, "id", "name")) %>
+  <%= select_tag('territory', options_from_collection_for_select(@territories, "territory", "territory")) %>
+  <%= submit_tag 'Search' %>
+<% end %>

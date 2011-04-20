@@ -22,6 +22,20 @@ class AgentsController < ApplicationController
     @events = Event.find(:all)
     present(@page)
   end
+  
+  def find_an_agent
+    @page.title = 'Find an Agent'
+    @brands = Brand.find(:all).sort_by(&:name)
+    @territories = Agent.territories
+    present(@page)
+  end
+  
+  def results
+    @page.title = 'Agent(s) Found'
+    @brands = Brand.find(:all).sort_by(&:name)
+    @territories = Agent.territories
+    @agents = Agent.find_by_territory_and_brand(params[:territory],params[:brand_id])
+  end
 
 protected
 
