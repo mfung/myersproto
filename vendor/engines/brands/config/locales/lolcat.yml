@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    brands:
+      title: Brands
+  admin:
+    brands:
+      actions:
+        create_new: CREATE NEW Brand
+        reorder: REORDR Brands
+        reorder_done: DUN REORDERIN Brands
+      records:
+        title: Brands
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Brands YET. CLICK "CREATE NEW Brand" 2 ADD UR FURST brand.
+      brand:
+        view_live_html: VIEW DIS brand LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS brand
+        delete: REMOOV DIS brand FOREVR
+  brands:
+    show:
+      other: OTHR Brands

@@ -4,4 +4,7 @@ class Agent < ActiveRecord::Base
 
   validates :name, :presence => true, :uniqueness => true
   
+  has_many :brands_carrieds, :dependent => :destroy
+  has_many :brands, :through => :brands_carrieds
+  
 end

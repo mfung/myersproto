@@ -62,3 +62,4 @@ gem 'refinerycms-i18n',         '~> 1.0.0'
 
 gem 'refinerycms-events', '1.0', :path => 'vendor/engines'
 gem 'refinerycms-agents', '1.0', :path => 'vendor/engines'
+gem 'refinerycms-brands', '1.0', :path => 'vendor/engines'

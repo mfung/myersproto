@@ -5,8 +5,18 @@
         } %>
   
   <div class='field'>
-    <%= f.label :name -%>
-    <%= f.text_field :name, :class => 'larger widest' -%>
+    <%= f.label :company -%>
+    <%= f.text_field :company, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label 'Contact' -%>
+    <%= f.text_field :name -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label 'Territory' -%>
+    <%= f.text_field :territory -%>
   </div>
   
   <div class='field'>
@@ -35,8 +45,18 @@
   </div>
   
   <div class='field'>
+    <%= f.label :fax -%>
+    <%= f.text_field :fax -%>
+  </div>
+    
+  <div class='field'>
     <%= f.label :email -%>
     <%= f.text_field :email -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :url -%>
+    <%= f.text_field :url -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",

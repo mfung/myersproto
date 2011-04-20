@@ -1,1 +1,25 @@
 <%= render :partial => "form" %>
+<div class='field'>
+  <div style="display: block; width: 300px;float: left;">
+  <h2>Brands Associated</h2>
+  <%= form_tag('/refinery/agent/remove_brand', :method => 'post') do %>
+    <%= hidden_field_tag 'agent_id', @agent.id %>
+    <select size='10' name="brand_id" style="width: 270px;">
+      <%= options_from_collection_for_select(@agent.brands.sort_by(&:name), :id, :name)%>
+    </select><br/><br/>
+    <%= submit_tag 'Remove Brand' %>
+  <% end %>
+  </div>
+  <div style="display: block; width: 300px;float: left;">
+  <h2>Brands</h2>
+  <%= form_tag('/refinery/agent/add_brand', :method => 'post') do %>
+    <%= hidden_field_tag 'agent_id', @agent.id %>
+    <select size='10' name="brand_id" style="width: 270px;">
+      <% brands = Brand.all - @agent.brands %>
+      <%= options_from_collection_for_select(brands.sort_by(&:name), :id, :name)%>
+    </select><br/><br/>
+    <%= submit_tag 'Add Brand' %>
+  <% end %>
+  </div>
+  <br class='clearfix'/>
+</div>

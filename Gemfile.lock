@@ -2,6 +2,7 @@ PATH
   remote: vendor/engines
   specs:
     refinerycms-agents (1.0)
+    refinerycms-brands (1.0)
     refinerycms-events (1.0)
 
 GEM
@@ -151,6 +152,7 @@ DEPENDENCIES
   rails (= 3.0.7.rc1)
   refinerycms (= 0.9.9.17)
   refinerycms-agents (= 1.0)!
+  refinerycms-brands (= 1.0)!
   refinerycms-events (= 1.0)!
   refinerycms-i18n (~> 1.0.0)
   sqlite3

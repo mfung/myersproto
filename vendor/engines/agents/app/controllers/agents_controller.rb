@@ -19,6 +19,7 @@ class AgentsController < ApplicationController
   
   def find
     @page.title = 'Find an Agent'
+    @events = Event.find(:all)
     present(@page)
   end
 
