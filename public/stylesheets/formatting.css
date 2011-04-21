@@ -20,6 +20,8 @@ h2 {
 }
 p {
   margin-bottom: 1.25em;
+  line-height: 1.15em;
+  font-weight: normal;
 }
 header {
   height: 80px;
