@@ -4,8 +4,7 @@
     <% @agents.each do |agent| %>
       <div id="agent-info">
         <table>
-          <thead><td colspan=4>Company</td></thead>
-          <tr><td colspan=4><%= agent.company %></td></tr>
+          <thead><td colspan=4><h2><%= agent.company %></h2></td></thead>
           <tr><td>Contact</td><td>Territory</td><td>Phone</td><td>Fax</td></tr>
           <tr><td><%= agent.name %></td><td><%= agent.territory %></td><td><%= agent.phone%></td><td><%= agent.fax %></td></tr>
           <tr><td colspan=4>Email</td></tr>
