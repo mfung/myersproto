@@ -1,1 +1,14 @@
 <%= render :partial => "form" %>
+<div class='field'>
+  <div>
+  <h2>Brand Categories</h2>
+  <table>
+    <thead><td>Name:</td><td>Edit:</td><td>Delete:</td></thead>
+    
+    <% @brand.brand_categories.each do |category| %>
+    <tr><td><%= category.name %></td><td>Edit</td><td>Delete</td></tr>
+    <% end %>
+  </table>
+  </div>
+  <br class='clearfix'/>
+</div>

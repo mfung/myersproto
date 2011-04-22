@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110419215340) do
+ActiveRecord::Schema.define(:version => 20110421234950) do
 
   create_table "agents", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(:version => 20110419215340) do
   end
 
   add_index "agents", ["id"], :name => "index_agents_on_id"
+
+  create_table "brand_categories", :force => true do |t|
+    t.integer  "brand_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "brands", :force => true do |t|
     t.string   "name"

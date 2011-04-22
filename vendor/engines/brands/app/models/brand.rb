@@ -8,6 +8,7 @@ class Brand < ActiveRecord::Base
   
   has_many :brands_carrieds, :dependent => :destroy
   has_many :agents, :through => :brands_carrieds
+  has_many :brand_categories
   
   def to_param
       "#{id.to_s}-#{slug}"
