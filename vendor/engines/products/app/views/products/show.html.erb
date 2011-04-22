@@ -1,0 +1,123 @@
+<% content_for :body_content_title do %>
+  <%= @product.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Brand Category</h1>
+    <p>
+      <%=raw @product.brand_category_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @product.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @product.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Brochure Path</h1>
+    <p>
+      <%= link_to 'brochure_path', @product.brochure_path.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Cutsheet Path</h1>
+    <p>
+      <%= link_to 'cutsheet_path', @product.cutsheet_path.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Drawing Path</h1>
+    <p>
+      <%= link_to 'drawing_path', @product.drawing_path.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Specsheet Path</h1>
+    <p>
+      <%= link_to 'specsheet_path', @product.specsheet_path.url %>
+    </p>
+  </section>
+  <section>
+    <h1>User Manual Path</h1>
+    <p>
+      <%= link_to 'user_manual_path', @product.user_manual_path.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Instruction Manual Path</h1>
+    <p>
+      <%= link_to 'instruction_manual_path', @product.instruction_manual_path.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture1 Path</h1>
+    <p>
+      <%= image_fu @product.picture1_path, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture2 Path</h1>
+    <p>
+      <%= image_fu @product.picture2_path, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture3 Path</h1>
+    <p>
+      <%= image_fu @product.picture3_path, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture4 Path</h1>
+    <p>
+      <%= image_fu @product.picture4_path, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture1 Thumb</h1>
+    <p>
+      <%=raw @product.picture1_thumb %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture2 Thumb</h1>
+    <p>
+      <%=raw @product.picture2_thumb %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture3 Thumb</h1>
+    <p>
+      <%=raw @product.picture3_thumb %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture4 Thumb</h1>
+    <p>
+      <%=raw @product.picture4_thumb %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="products">
+      <% @products.each do |product| %>
+        <li>
+          <%= link_to product.name, product_url(product) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

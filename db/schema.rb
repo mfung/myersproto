@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110421234950) do
+ActiveRecord::Schema.define(:version => 20110422165404) do
 
   create_table "agents", :force => true do |t|
     t.string   "name"
@@ -138,6 +138,31 @@ ActiveRecord::Schema.define(:version => 20110421234950) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "products", :force => true do |t|
+    t.integer  "brand_category_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "brochure_path_id"
+    t.string   "cutsheet_path_id"
+    t.string   "drawing_path_id"
+    t.string   "specsheet_path_id"
+    t.string   "user_manual_path_id"
+    t.string   "instruction_manual_path_id"
+    t.integer  "picture1_path_id"
+    t.integer  "picture2_path_id"
+    t.integer  "picture3_path_id"
+    t.integer  "picture4_path_id"
+    t.string   "picture1_thumb"
+    t.string   "picture2_thumb"
+    t.string   "picture3_thumb"
+    t.string   "picture4_thumb"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "products", ["id"], :name => "index_products_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"

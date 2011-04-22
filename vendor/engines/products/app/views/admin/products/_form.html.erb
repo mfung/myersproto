@@ -1,0 +1,164 @@
+<%= form_for [:admin, @product] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @product,
+          :include_object_name => true
+        } %>
+  
+  <div class='field'>
+    <%= f.label :brand_category_id -%>
+    <%= f.text_field :brand_category_id, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name -%>
+  </div>
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:description].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to part.to_s.titleize, "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div id='page_part_editors'>
+        <% [:description].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  
+  <div class='field'>
+    <%= f.label :brochure_path -%>
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+          :f => f,
+          :field => :brochure_path_id,
+          :resource => @product.brochure_path,
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :cutsheet_path -%>
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+          :f => f,
+          :field => :cutsheet_path_id,
+          :resource => @product.cutsheet_path,
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :drawing_path -%>
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+          :f => f,
+          :field => :drawing_path_id,
+          :resource => @product.drawing_path,
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :specsheet_path -%>
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+          :f => f,
+          :field => :specsheet_path_id,
+          :resource => @product.specsheet_path,
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :user_manual_path -%>
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+          :f => f,
+          :field => :user_manual_path_id,
+          :resource => @product.user_manual_path,
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :instruction_manual_path -%>
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+          :f => f,
+          :field => :instruction_manual_path_id,
+          :resource => @product.instruction_manual_path,
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture1_path -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+          :f => f,
+          :field => :picture1_path_id,
+          :image => @product.picture1_path,
+          :toggle_image_display => false
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture2_path -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+          :f => f,
+          :field => :picture2_path_id,
+          :image => @product.picture2_path,
+          :toggle_image_display => false
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture3_path -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+          :f => f,
+          :field => :picture3_path_id,
+          :image => @product.picture3_path,
+          :toggle_image_display => false
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture4_path -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+          :f => f,
+          :field => :picture4_path_id,
+          :image => @product.picture4_path,
+          :toggle_image_display => false
+        } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture1_thumb -%>
+    <%= f.text_field :picture1_thumb -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture2_thumb -%>
+    <%= f.text_field :picture2_thumb -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture3_thumb -%>
+    <%= f.text_field :picture3_thumb -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture4_thumb -%>
+    <%= f.text_field :picture4_thumb -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('delete', :scope => 'admin.products.product'),
+                :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @product.name)
+              } %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>
