@@ -1,14 +1,50 @@
 <%= render :partial => "form" %>
 <div class='field'>
   <div>
-  <h2>Brand Categories</h2>
+  <h2>Brand Categories <%= link_to 'Add New', '/refinery/brands/' + @brand.id.to_s + '/edit' -%></h2>
   <table>
     <thead><td>Name:</td><td>Edit:</td><td>Delete:</td></thead>
     
-    <% @brand.brand_categories.each do |category| %>
-    <tr><td><%= category.name %></td><td>Edit</td><td>Delete</td></tr>
+    <% @brand.brand_categories.sort_by(&:name).each do |category| %>
+    <tr><td><%= category.name %></td><td><%= link_to 'Edit', '/refinery/brands/' + @brand.id.to_s + '/edit/?cat=' + category.id.to_s -%></td><td><%= link_to 'Delete', '/categories/' + category.id.to_s, :confirm => 'Are you sure?', :method => :delete %></td></tr>
     <% end %>
   </table>
+  </div>
+  <br class='clearfix'/>
+</div>
+<div class='field'>
+  <div>
+<a name="categories">
+<% if params[:cat] %>
+  <% cat = BrandCategory.find(params[:cat]) %>
+  <h2>Edit Category</h2>
+  <%= form_tag('/categories/' + cat.id.to_s, :method => 'put') do %>
+      <div class='field'>
+      
+      <%= hidden_field_tag 'category[brand_id]', @brand.id %>
+      <%= label_tag :name -%>
+      <%= text_field_tag 'category[name]', cat.name %>
+      <br />
+      <%= label_tag :description -%>
+      <%= text_area_tag 'category[description]', cat.description  %><br /><br />
+      <%= submit_tag 'Update Category' %>
+      </div>
+    <% end %>
+  <% else %>
+    <h2>Add Category</h2>
+    <%= form_tag('/categories', :method => 'post') do %>
+      <div class='field'>  
+      <%= hidden_field_tag 'category[brand_id]', @brand.id %>
+      <%= label_tag :name -%>
+      <%= text_field_tag 'category[name]' %>
+      <br />
+      <%= label_tag :description -%>
+      <%= text_area_tag 'category[description]' %><br /><br />
+      <%= submit_tag 'Add Category' %>
+      </div>
+    <% end %>
+  <% end %>
+
   </div>
   <br class='clearfix'/>
 </div>
