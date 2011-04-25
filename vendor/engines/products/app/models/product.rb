@@ -14,4 +14,5 @@ class Product < ActiveRecord::Base
   belongs_to :specsheet_path, :class_name => 'Resource'
   belongs_to :user_manual_path, :class_name => 'Resource'
   belongs_to :instruction_manual_path, :class_name => 'Resource'
+
 end

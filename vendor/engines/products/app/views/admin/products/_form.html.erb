@@ -2,12 +2,15 @@
   <%= render :partial => "/shared/admin/error_messages", :locals => {
           :object => @product,
           :include_object_name => true
-        } %>
-  
-  <div class='field'>
-    <%= f.label :brand_category_id -%>
-    <%= f.text_field :brand_category_id, :class => 'larger widest' -%>
-  </div>
+        } %>  
+  <select name='product[brand_category_id]' id='product_brand_category_id'>    
+    <% @brands.each do |brand| %>
+      <% brand.brand_categories.sort_by(&:name).each do |category|%>
+        <option value="<%= category.id %>"><%= brand.name %> > <%= category.name %> </option>
+      <% end %>
+    <% end %>
+    
+  </select>
   
   <div class='field'>
     <%= f.label :name -%>
@@ -125,26 +128,6 @@
           :image => @product.picture4_path,
           :toggle_image_display => false
         } %>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :picture1_thumb -%>
-    <%= f.text_field :picture1_thumb -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :picture2_thumb -%>
-    <%= f.text_field :picture2_thumb -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :picture3_thumb -%>
-    <%= f.text_field :picture3_thumb -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :picture4_thumb -%>
-    <%= f.text_field :picture4_thumb -%>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",
