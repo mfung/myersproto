@@ -27,6 +27,8 @@ public/stylesheets/cache
 # Vendor Cache
 vendor/cache
 
+vendor/gems
+
 # Acts as Indexed
 index/**/*
 
