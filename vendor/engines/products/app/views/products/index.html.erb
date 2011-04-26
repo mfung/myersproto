@@ -1,8 +1,29 @@
 <% content_for :body_content_left do %>
-  <ul id="products">
-    <% @products.each do |product| %>
+  <ul id="brands">
+    <% @brands.each do |brand| %>
       <li>
-        <%= link_to product.name, product_url(product) %>
+        <%= link_to brand.name, brand_url(brand) %>
+        
+        <% if brand.brand_categories %>
+          <ul id="categories">
+            <% brand.brand_categories.sort_by(&:name).each do |category| %>
+              <li>
+                <%= link_to category.name %>
+                
+                  <% if category.products %>
+                    <ul id="products">
+                      <% category.products.sort_by(&:name).each do |product| %>
+                        <li>
+                          <%= link_to product.name, product_url(product) %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+        
       </li>
     <% end %>
   </ul>

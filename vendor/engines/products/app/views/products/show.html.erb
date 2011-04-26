@@ -24,37 +24,49 @@
   <section>
     <h1>Brochure Path</h1>
     <p>
+      <% if @product.brochure_path %>
       <%= link_to 'brochure_path', @product.brochure_path.url %>
+      <% end %>
     </p>
   </section>
   <section>
     <h1>Cutsheet Path</h1>
     <p>
+      <% if @product.cutsheet_path %>
       <%= link_to 'cutsheet_path', @product.cutsheet_path.url %>
+      <% end %>
     </p>
   </section>
   <section>
     <h1>Drawing Path</h1>
     <p>
+      <% if @product.drawing_path %>
       <%= link_to 'drawing_path', @product.drawing_path.url %>
+      <% end %>
     </p>
   </section>
   <section>
     <h1>Specsheet Path</h1>
     <p>
+      <% if @product.specsheet_path %>
       <%= link_to 'specsheet_path', @product.specsheet_path.url %>
+      <% end %>
     </p>
   </section>
   <section>
     <h1>User Manual Path</h1>
     <p>
+      <% if @product.user_manual_path %>
       <%= link_to 'user_manual_path', @product.user_manual_path.url %>
+      <% end %>
     </p>
   </section>
   <section>
     <h1>Instruction Manual Path</h1>
     <p>
+      <% if @product.instruction_manual_path %>
       <%= link_to 'instruction_manual_path', @product.instruction_manual_path.url %>
+      <% end %>
     </p>
   </section>
   <section>
